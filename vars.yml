@@ -1,0 +1,28 @@
+# AWS Credentials
+aws_access_key: "AKIAJMMGCRL2X7EUQL3A" 
+aws_secret_key: "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"
+aws_region: "eu-west-1"
+
+# Number of Selenium Grid Nodes
+selenium_grid_nodes: 1
+selenium_grid: 1
+
+ec2_free_win_server_2016: ami-6e283d08
+ec2_free_aws_linux: ami-01ccc867
+ec2_instance_type: t2.micro
+
+# VPC information
+vpc_name: "SeleniumGrid"
+vpc_cidr_block: "10.0.0.0/16"
+
+#For Security Group Rule
+my_ip: "10.221.25.205"
+
+#Subnets
+public_subnet_1_cidr: "10.0.0.0/24"
+
+private_subnet_1_cidr: "10.0.1.0/24"
+
+public_subnet_2_cidr: "10.0.10.0/24"
+
+private_subnet_2_cidr: "10.0.11.0/24"

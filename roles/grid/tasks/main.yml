@@ -1,0 +1,25 @@
+---
+- name: Create a Selenium Grid Server
+  ec2:
+    key_name: grid
+    instance_type: "{{ ec2_instance_type }}"
+    image: "{{ ec2_free_aws_linux }}"
+    wait: yes
+    count: "{{ selenium_grid }}"
+    region: "{{ aws_region }}"
+  register: ec2_instance
+
+- name: Create a Selenium Grid Nodes
+  ec2:   
+    key_name: grid
+    instance_type: "{{ ec2_instance_type }}"
+    image: "{{ ec2_free_win_server_2016 }}"
+    wait: yes
+    count: "{{ selenium_grid_nodes }}"
+    region: "{{ aws_region }}"
+  register: ec2_instance_node
+
+- name: set the data
+  debug: 
+    msg: "Grid is {{ ec2_instance }} and Node is {{ ec2_instance_node }}"
+
