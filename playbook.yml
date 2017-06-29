@@ -2,4 +2,24 @@
 - hosts: local
   roles:
      - grid
-  
+
+- hosts: grid_server
+  become: true  
+  tasks: 
+   - get_url:
+      url: http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+      dest: ./
+   - yum: 
+       name: java-1.7.0-openjdk
+       state: absent
+   - yum:
+       name: java-1.8.0
+       state: present       
+   - shell: "nohup java -jar selenium-server-standalone-3.4.0.jar -role hub &"
+
+- hosts: grid_node
+  become: true
+  tasks:
+    - win_get_url:
+        url: http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+        dest: C:\

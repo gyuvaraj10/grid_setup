@@ -1,7 +1,9 @@
 # AWS Credentials
-aws_access_key: "AKIAJMMGCRL2X7EUQL3A" 
-aws_secret_key: "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"
+aws_access_key: "" 
+aws_secret_key: ""
 aws_region: "eu-west-1"
+
+pem_path: "/Users/Yuvaraj/.aws/grid.pem"
 
 # Number of Selenium Grid Nodes
 selenium_grid_nodes: 1
